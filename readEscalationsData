@@ -1,0 +1,11 @@
+import pandas as pd
+data=pd.read_csv(r"D:\AIML\DataSet\procon\reclamacoes-fundamentadas-sindec-2012.csv")
+escalations=[]
+for i in range(len(data)):
+    try:
+        dataFiltered=data.loc[i:i]
+        issue=dataFiltered.DescricaoProblema.values[0]
+        translations=translator.translate([issue])
+        escalations.append(translations[0].text)
+    except:
+        pass
