@@ -2,12 +2,18 @@ https://www.kaggle.com/gerosa/brazilian-consumer-2015-complaints-eda
 
 import pandas as pd
 data=pd.read_csv(r"D:\AIML\DataSet\procon\reclamacoes-fundamentadas-sindec-2012.csv")
+#data=data.loc[23:25]
 escalations=[]
 for i in range(len(data)):
-    try:
-        dataFiltered=data.loc[i:i]
-        issue=dataFiltered.DescricaoProblema.values[0]
-        translations=translator.translate([issue])
-        escalations.append(translations[0].text)
-    except:
-        pass
+        print(i)
+        try:
+            dataFiltered=data.loc[i:i]
+            print("dataFiltered",dataFiltered)
+            if(len(dataFiltered)>0):
+                issue=dataFiltered.DescricaoProblema.values[0]
+                print("issue",issue)
+                translations=translator.translate([issue])
+                print(translations[0].text)
+                escalations.append(translations[0].text)
+        except:
+            pass
