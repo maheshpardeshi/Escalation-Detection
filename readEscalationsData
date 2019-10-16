@@ -1,3 +1,5 @@
+https://www.kaggle.com/gerosa/brazilian-consumer-2015-complaints-eda
+
 import pandas as pd
 data=pd.read_csv(r"D:\AIML\DataSet\procon\reclamacoes-fundamentadas-sindec-2012.csv")
 escalations=[]
